@@ -1,0 +1,20 @@
+<div class="container">
+  <header class="header">
+    <h1>Pr Code Share</h1>
+    <button class="share-btn" (click)="openDialog()">Share</button>
+  </header>
+
+  <textarea [(ngModel)]="content"
+            class="editor"
+            placeholder="Write something..."></textarea>
+</div>
+
+<!-- Dialog Box -->
+<div class="dialog-backdrop" *ngIf="showDialog">
+  <div class="dialog">
+    <h2>Share Link</h2>
+    <input type="text" [value]="shareLink" readonly />
+    <button (click)="copyLink()">Copy</button>
+    <button class="close" (click)="closeDialog()">Close</button>
+  </div>
+</div>
